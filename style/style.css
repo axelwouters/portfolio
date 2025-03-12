@@ -1,0 +1,31 @@
+/* variables */
+
+:root{
+    --primary-color: #0089b7;
+    --secondary-color:  #e9370a;
+    --accent-color: #b3fedc;
+    --backgreound-color: #f3f4f6;
+    --text-color: #333333;
+    --white: #ffffff;
+    --button-hover-color: #a1ff42;
+    --button-text-color: #111111;
+}
+
+/* Base de style*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    line-height: 1.6;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/*type titres*/
