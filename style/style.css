@@ -29,3 +29,15 @@ html, body{
 }
 
 /*type titres*/
+h1, h2, h3{
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+
+/* Le header et la navigation*/
+header{
+    width: 100%;
+    background: var(--primary-color);
+    box-shadow: none;
+    padding: 10px 0;
+}
