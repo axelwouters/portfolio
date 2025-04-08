@@ -1,43 +1,522 @@
-/* variables */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-:root{
-    --primary-color: #0089b7;
-    --secondary-color:  #e9370a;
-    --accent-color: #b3fedc;
-    --backgreound-color: #f3f4f6;
-    --text-color: #333333;
-    --white: #ffffff;
-    --button-hover-color: #a1ff42;
-    --button-text-color: #111111;
-}
-
-/* Base de style*/
-*{
+/*style général*/
+body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #0a0f1e;
+    color: #b3fedc;
+    font-family: 'Orbitron', sans-serif;
 }
 
-html, body{
-    color: var(--text-color);
-    background-color: var(--primary-color);
-    line-height: 1.6;
-    width: 100%;
-    margin: 0;
+/*L'interface principale*/
+.halo-interface{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/*Navigation*/
+.mission-control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 97%;
+    background: rgb(0, 0, 0, 0.8);
+    padding: 15px 30px;
+    border-bottom: 2px solid #0089b7;
+    z-index: 1000;
+}
+
+.operator-name{
+    font-size: 24px;
+    font-weight: bold;
+    color: #e9370a;
+}
+
+.nav-missions ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
     padding: 0;
-    overflow: hidden;
 }
 
-/*type titres*/
-h1, h2, h3{
-    color: var(--secondary-color);
+.nav-missions a{
+    text-decoration: none;
+    color: #b3fedc;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-missions a:hover{
+    background: #a1ff42;
+    color: #111111;
+    box-shadow: 0px 0px 10px #a1ff42;
+}
+
+/*SECTION*/
+.mission-zone{
+    padding-top: 100px;
+}
+
+.mission-brief{
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-left: 4px solid #0089b7;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.mission-title{
+    font-size: 26px;
+    color: #a1ff42;
+    text-transform: uppercase;
+}
+
+.contact-list {
+    list-style: none;
+    display: flex;
+    gap: 30px; 
+    padding: 0;
+    margin-top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-list li a {
+    font-family: 'Orbitron', sans-serif; 
     font-size: 2rem;
+    color: #b3fedc; 
+    transition: transform 0.2s ease, color 0.3s ease;
+    text-shadow: 0 0 5px #00bfff;
 }
 
-/* Le header et la navigation*/
-header{
+.contact-list li a:hover {
+    transform: scale(1.2);
+    color: #a1ff42; 
+    text-shadow: 0 0 8px #a1ff42;
+}
+
+/*Compétences ()barre de progression*/
+.tech-stats{
+    margin-top: 15px;
+}
+
+.stat-item{
+    margin-bottom: 10px;
+}
+
+.stat-label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-bar{
     width: 100%;
-    background: var(--primary-color);
-    box-shadow: none;
-    padding: 10px 0;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.stat-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    background: #0089b7;
+    animation: fillBar 2s ease-out forwards;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #0089b7;
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+    position: relative;
+}
+
+.tech-item i {
+    font-size: 3.5rem;
+    margin-bottom: 8px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.tech-item:hover {
+    transform: scale(1.15);
+    color: #a1ff42;
+    text-shadow: 0 0 8px #a1ff42, 0 0 12px #a1ff42, 0 0 20px #a1ff42;
+}
+
+.tech-item i:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 6px #a1ff42);
+}
+
+/* Animation scintillement */
+@keyframes glow {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.5); }
+}
+
+.tech-item i {
+    animation: glow 2s infinite;
+}
+
+/* ---- FOOTER ---- */
+.system-status {
+    text-align: center;
+    padding: 10px;
+    background: #111;
+    border-top: 2px solid #0089b7;
+    margin-top: 30px;
+}
+
+.missions-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.mission-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #0089b7;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 137, 183, 0.5);
+}
+
+.mission-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.mission-card h3 {
+    color: #a1ff42;
+    margin-top: 10px;
+}
+
+.mission-card p {
+    font-size: 14px;
+    color: #b3fedc;
+}
+
+.tech-used {
+    display: block;
+    margin: 10px 0;
+    font-size: 12px;
+    color: #e9370a;
+}
+
+.mission-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #0089b7;
+    color: #111111;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+}
+
+.mission-btn:hover {
+    background: #a1ff42;
+    box-shadow: 0px 0px 10px #a1ff42;
+}
+
+.mission-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px #00ffcc;
+    border-left-color: #00ffcc;
+}
+
+
+/*Projet 1: Paradis_Restaurant*/
+.fire nav {
+    background-color: rgba(0, 137, 183, 0.1);
+    padding: 10px;
+    border-bottom: 2px solid #0089b7;
+}
+
+.fire nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.fire nav ul li {
+    margin: 0 15px;
+}
+
+/* Liens lumineux au survol */
+.fire nav ul li a {
+    color: #a1ff42;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.fire nav ul li a:hover {
+    color: #b3fedc;
+    text-shadow: 0 0 5px #a1ff42, 0 0 10px #a1ff42;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 137, 183, 0.1);
+    border-top: 2px solid #0089b7;
+    margin-top: 20px;
+}
+
+#project-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 137, 183, 0.5);
+}
+
+/* Bouton avec un effet d'énergie scintillante */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #0089b7, #a1ff42, #0089b7);
+    background-size: 200%;
+    color: #111111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s;
+    animation: energyFlow 3s infinite;
+}
+
+
+.btn-primary:hover {
+    background-position: 100%;
+    box-shadow: 0 0 10px #a1ff42, 0 0 20px #a1ff42, 0 0 30px #a1ff42;
+}
+
+@keyframes energyFlow {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+}
+
+/* Animation d'apparition progressive */
+.appear {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/*Projet2 Les îles Paradisiaque*/
+
+.ile nav{
+    background-color: rgba(0, 137, 183, 0.1);
+    padding: 10px;
+    border-bottom: 2px solid #0089b7;
+}
+
+.ile nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.ile nav ul li{
+    margin: 0 15px;
+}
+
+.ile nav ul li a{
+    color: #a1ff42;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.ile nav ul li a:hover {
+    color: #b3fedc;
+    text-shadow: 0 0 5px #a1ff42, 0 0 10px #a1ff42;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e9370a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #b30000;
+}
+
+
+
+.skills-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+/* Apparition progressive */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation Pulse pour les boutons */
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Glitch futuriste */
+h1, h2 {
+    position: relative;
+    display: inline-block;
+}
+
+h1::after, h2::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -1px 0 red, 1px 0 blue;
+    top: 0;
+    color: #e9370a;
+    background: transparent;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    }
+    50% {
+        clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    }
+}
+
+/*hardcore*/
+.peinture nav{
+    background-color: rgba(0, 137, 183, 0.1);
+    padding: 10px;
+    border-bottom: 2px solid #0089b7;
+}
+
+.peinture nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.peinture nav ul li{
+    margin: 0 15px;
+}
+
+.peinture nav ul li a{
+    color: #a1ff42;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.peinture nav ul li a:hover {
+    color: #b3fedc;
+    text-shadow: 0 0 5px #a1ff42, 0 0 10px #a1ff42;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e9370a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    margin-left: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #b30000;
+}
+
+
+
+.skills-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill:hover {
+    transform: scale(1.05);
 }

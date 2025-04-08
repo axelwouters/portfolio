@@ -3,83 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Wouters Axel</title>
+    <title>Opérateur Portfolio - Axel Wouters</title>
+
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
-    <header class="navbar">
-        <nav>
-            <button class="menu-toggle" aria-label="Ouvrir la navigation">☰</button>
-                <ul class="nav-list">
-                    <li><a href="#home">Accueil</a></li>
-                    <li><a href="#compétence">Compétence</a></li>
-                    <li><a href="#mesprojets">Projets Réaliser</a></li>
-                    <li><a href="#contacts">Me Contact</a></li>
+    
+    <div class="halo-interface">
+        <header class="mission-control">
+            <div class="operator-info">
+                <h1 class="operator-name">Wouters Axel</h1>
+                <p class="operator-rank">Développeur Full Stack</p>
+            </div>
+
+            <nav class="nav-missions">
+                <ul>
+                    <li><a href="#accueil" class="mission-link active">Accueil</a></li>
+                    <li><a href="#competences" class="mission-link">Compétences</a></li>
+                    <li><a href="#projets" class="mission-link">Projets</a></li>
+                    <li><a href="#contact" class="mission-link">Contact</a></li>
                 </ul>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
+        <!--Contenu principal-->
+        <main class="mission-zone">
 
-    <main>
-        <section id="home">
-            <div class="home-content">
-                <h1>Axel Wouters</h1>
+            <!--Section Accueil-->
+            <section id="accueil" class="mission-brief">
+                <div class="tech-overlay">
+                    <h2 class="mission-title">Dossier Opérationnel</h2>
+                    <p class="operator-summary">Développeur full stack .</p>
+                </div>
+
+                <!--Section A propos-->
+                    <div id="a-propos" class="about-section">
+                        <h3>À propos de moi</h3>
+                        <p>Je m'appelle Axel Wouters, développeur web Full Stack passionné par la création d'interfaces modernes et fonctionnelles. 
+                        Diplômé en développement web, je maîtrise plusieurs technologies comme HTML, CSS, JavaScript, React, Node.js, et MySQL.</p>
+                        <p>Mon objectif est de réaliser des projets innovants, en alliant design épuré et fonctionnalités avancées. J'aime relever des défis techniques et explorer de nouvelles technologies.</p>
+                    </div>
+            </section>
+
+           <!-- Section Compétences -->
+           <section id="competences" class="mission-brief">
+            <h2 class="mission-title">Équipement Technologique</h2>
+
+            <div class="tech-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Langages</span>
+                    <div class="stat-bar" style="width: 85%;"></div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Frameworks</span>
+                    <div class="stat-bar" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <!--Icone des compétences-->
+            <div class="tech-list"></div>
+        </section>
+
+         <!-- Section Projets -->
+         <section id="projets" class="mission-brief">
+            <h2 class="mission-title">Missions Accomplies</h2>
+            <p>Présentation des projets réalisés.</p>
+            <div class="project-container">
+                <!-- Ajoute ici les projets avec des images et descriptions -->
+                <section class="mission-brief">
+                    <h2 class="mission-title">Missions Accomplies</h2>
+                    <div class="missions-container">
+                        <div class="mission-card">
+                            <h3>Site Vitrine - Paradis_Restaurant</h3>
+                            <p>Développement d’un site vitrine pour un d'un restaurant</p>
+                            <span class="tech-used">HTML | CSS</span>
+                            <a href="projets/projet1.html" class="mission-btn">Voir le projet</a>
+                        </div>
+                
+                        <div class="mission-card">
+                            <h3>Site Vitrine - Les îles Paradisiaque</h3>
+                            <p>Création d’une plateforme e-commerce performante avec React et Node.js.</p>
+                            <span class="tech-used">Html | CSS | Javascript</span>
+                            <a href="projets/projet2.html" class="mission-btn">Voir le projet</a>
+                        </div>
+                
+                        <div class="mission-card">
+                            <h3>Projet école Hardcore</h3>
+                            <p>Création d'une plateforme e-commerce performante avec React et Node.js.</p>
+                            <span class="tech-used">React | Node.js | MySQL | SASS</span>
+                            <a href="projets/projet3.html" class="mission-btn">Voir le projet</a>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
 
-        <!--section about-->
-        <section id="about">
-            <div class="fade-in-content fade-in-left">
-        </section>
-       
-        <!--section compétences-->
-        <section id="skills">
-            <div class="fade-in-content fade-in-right">
-                <h2>Compétences</h2>
-                <div class="skills-container" id="skills-container">
-                </div>
-            </div>
-        </section>
-            
-        <!--section projets-->
-        <section id="projects">
-            <div class="fade-in-content fade-in-left">
-                <h2>Réalisations</h2>
-                <div class="projects-grid" id="projects-grid">
-                </div>
-            </div>
-        </section>
-        
-        <!--section contact-->
-        <section id="contact-container">
-            <form id="contact-form" action="https://formspree.io/f/xjkgvoga" method="post">
-                <h2>Contactez-moi</h2> <br>
-                <div>
-                  <label for="name">Nom :</label>
-                  <input type="text" id="name" name="name" placeholder="Nom" required>
-                </div>
-                <div>
-                  <label for="email">Email :</label>
-                  <input type="email" id="email" name="email" placeholder="Email" required>
-                </div>
-                <div>
-                  <label for="message">Message :</label>
-                  <textarea id="message" name="message" rows="4" placeholder="Votre message..." required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Envoyer</button>
-              </form>
+        <!-- Section Contact -->
+<section id="contact" class="mission-brief">
+    <h2 class="mission-title">Communication</h2>
+    <p>Me contacter via les canaux suivants :</p>
+    <ul class="contact-list">
+        <li>
+            <a href="mailto:woutersaxel@yahoo.com" title="Envoyer un email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/axel-wouters-231702221/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/axelwouters" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+    </ul>
+</section>
+        </main>
 
-            <div id="faq-section">
-                <p>Vous avez des questions ?</p>
-                <div id="social-icons"></div>
-            </div>
-            
-        </section>
-    </main>
+        <!-- Footer -->
+        <footer class="system-status">
+            <div class="connection-status">État du système : Opérationnel</div>
+            <div class="timestamp">Dernière mise à jour : <span id="current-time"></span></div>
+        </footer>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Wouters Axel | Tous droits réservés.</p>
-    </footer>
     <script src="scripts/app.js"></script>
 </body>
 </html>
